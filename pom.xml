@@ -82,7 +82,7 @@
 						<version>2.5.2</version>
 						<configuration>
 							<from>
-								<image>openjdk:15</image>
+								<image>openjdk:11</image>
 							</from>
 							<container>
 								<ports>
@@ -97,7 +97,7 @@
 								<phase>package</phase>
 								<configuration>
 									<to>
-										<image>docker.io/amigoscode/${app.image.name}:${app.image.tag}</image>
+										<image>docker.io/leolo950626/${app.image.name}:${app.image.tag}</image>
 									</to>
 								</configuration>
 								<goals>
@@ -109,7 +109,7 @@
 								<phase>package</phase>
 								<configuration>
 									<to>
-										<image>docker.io/amigoscode/${app.image.name}:latest</image>
+										<image>docker.io/leolo950626/${app.image.name}:latest</image>
 									</to>
 								</configuration>
 								<goals>
@@ -134,7 +134,7 @@
 						<version>2.5.2</version>
 						<configuration>
 							<from>
-								<image>openjdk:15</image>
+								<image>openjdk:11</image>
 							</from>
 							<container>
 								<ports>
@@ -149,7 +149,7 @@
 								<phase>package</phase>
 								<configuration>
 									<to>
-										<image>amigoscode/${app.image.name}:${app.image.tag}</image>
+										<image>leolo950626/${app.image.name}:${app.image.tag}</image>
 									</to>
 								</configuration>
 								<goals>
@@ -161,7 +161,7 @@
 								<phase>package</phase>
 								<configuration>
 									<to>
-										<image>amigoscode/${app.image.name}:latest</image>
+										<image>leolo950626/${app.image.name}:latest</image>
 									</to>
 								</configuration>
 								<goals>
