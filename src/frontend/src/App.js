@@ -11,7 +11,7 @@ import {
     Badge,
     Tag,
     Avatar,
-    Radio, Popconfirm
+    Popconfirm
 } from 'antd';
 
 import {
@@ -33,11 +33,11 @@ const {SubMenu} = Menu;
 
 const TheAvatar = ({name}) => {
     const trim = name.trim();
-    if (trim.length == 0) {
+    if (trim.length === 0) {
         return <Avatar icon={UserOutlined}/>
     } else {
         const split = trim.split(" ");
-        if (split.length == 1) {
+        if (split.length === 1) {
             return <Avatar>{name.charAt(0)}</Avatar>
         }
         return <Avatar>{`${name.charAt(0)}${name.charAt(name.length-1)}`}</Avatar>
