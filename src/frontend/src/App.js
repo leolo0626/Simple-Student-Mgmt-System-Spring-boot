@@ -11,7 +11,7 @@ import {
     Badge,
     Tag,
     Avatar,
-    Popconfirm
+    Popconfirm, Divider
 } from 'antd';
 
 import {
@@ -221,7 +221,13 @@ function App() {
                     {renderStudents()}
                 </div>
             </Content>
-            <Footer style={{textAlign: 'center'}}>By Leo Lo</Footer>
+            <Footer style={{textAlign: 'center'}}>By Leo Lo
+            <Divider>
+                <a href="https://yahoo.com.hk/">
+                    Click here to Yahoo Site.
+                </a>
+            </Divider>
+            </Footer>
         </Layout>
     </Layout>
 }

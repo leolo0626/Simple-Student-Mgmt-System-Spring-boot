@@ -227,4 +227,27 @@ https://github.com/features/actions
   - `deploy` - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects.
 from https://stackoverflow.com/questions/16602017/how-are-mvn-clean-package-and-mvn-clean-install-different
 
+- error facing during CI
+  - failed in frontend-maven-plugin
+    - it's due to eslint error. fix it and then solve. Nothing about the version
+
+### Create Slack WebHook
+- Go to https://api.slack.com/apps
+- Create a new application
+- Create a new webhook
+- Create a new Channel
+- Copy webhook token to the secret (under setting) of this repository
+
+## AWS User , Groups , Permission
+- Go to AWS
+- Select security credential 
+- Create User Group, called GithubActions
+- Create User, called github-actions
+- check the selection , which is to allow application to use keys 
+- add user to group
+- After that, you will get a secret key and id (remark, they only show once)
+- place them on to the secret (under setting) in the github
+
+### For the deployment
+- look at `.github\workflows\deploy.yml`
 
