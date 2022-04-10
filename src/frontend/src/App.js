@@ -26,7 +26,7 @@ import {
 import StudentDrawerForm from "./StudentDrawerForm";
 
 import './App.css';
-import {successNotification} from "./Notification";
+import {errorNotification, successNotification} from "./Notification";
 
 const {Header, Content, Footer, Sider} = Layout;
 const {SubMenu} = Menu;
@@ -48,6 +48,14 @@ const removeStudent = (studentId, callback) => {
     deleteStudent(studentId).then(()=>{
         successNotification("Student deleted", `Student ${studentId} is deleted`);
         callback();
+    }).catch(err => {
+        err.response.json().then(res => {
+            console.log(res);
+            errorNotification(
+                "There was an issue",
+                `${res.message} [${res.status}] [${res.error}]`
+            )
+        });
     })
 }
 
@@ -114,7 +122,15 @@ function App() {
                 console.log(data);
                 setStudents(data);
                 setFetching(false);
-            })
+            }).catch(err => {
+                console.log(err.response);
+                err.response.json().then(res => {
+                    console.log(res);
+                    errorNotification(
+                        "There was an issue",
+                        `${res.message} [statusCode:${res.status}]`);
+                })
+            }).finally(()=> setFetching(false));
 
     useEffect(() => {
         console.log("component is mounted");
@@ -126,7 +142,19 @@ function App() {
             return <Spin indicator={antIcon}/>
         }
         if (students.length <= 0) {
-            return <Empty/>;
+            return <>
+                <Button
+                    onClick={() => setShowDrawer(!showDrawer)}
+                    type="primary" shape="round" icon={<PlusOutlined/>} size="small">
+                    Add New Student
+                </Button>
+                <StudentDrawerForm
+                    showDrawer={showDrawer}
+                    setShowDrawer={setShowDrawer}
+                    fetchStudents={fetchStudents}
+                />
+                <Empty/>
+                </>;
         }
         return <>
             <StudentDrawerForm
@@ -193,7 +221,7 @@ function App() {
                     {renderStudents()}
                 </div>
             </Content>
-            <Footer style={{textAlign: 'center'}}>By Amigoscode</Footer>
+            <Footer style={{textAlign: 'center'}}>By Leo Lo</Footer>
         </Layout>
     </Layout>
 }

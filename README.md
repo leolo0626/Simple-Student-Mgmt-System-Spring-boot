@@ -159,5 +159,49 @@ Details :-> https://blog.csdn.net/motui/article/details/79012846
 
 4. mock up some data
    https://www.mockaroo.com/
-5. 
-6. 
+
+---
+##Error Handling 
+Server side
+
+in application.properties , it will shows the error msg, path in the response.
+
+```
+server.error.include-message=always
+
+server.error.include-binding-errors=always
+```
+
+
+---
+
+##AWS Database
+
+1. Go to Configuration
+2. Database session and edit 
+
+Snapshot - restore something
+
+Engine Postgres
+
+let the AWS helps use to set up everything
+
+Create application-dev.properties 
+- change the db connection as well as username
+- change the environment in configuration in intellij 
+- environment variable - set to `SPRING_PROFILES_ACTIVE=dev`
+
+Change the Security group
+- allow or deny trafic to EC2 
+- go to AWS console
+- Search for rds and change the inbound rule 
+- add the inbound rule to my ip 
+- then you can use it in your local machine via psql or intelij 
+
+`create database leolo950626`
+
+---
+
+## CICD
+
+https://github.com/features/actions
