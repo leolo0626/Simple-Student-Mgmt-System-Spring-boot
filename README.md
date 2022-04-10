@@ -247,3 +247,6 @@ from https://stackoverflow.com/questions/16602017/how-are-mvn-clean-package-and-
 - add user to group
 - After that, you will get a secret key and id (remark, they only show once)
 - place them on to the secret (under setting) in the github
+
+### For the deployment
+- look at `.github\workflows\deploy.yml`
