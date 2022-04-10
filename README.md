@@ -205,3 +205,25 @@ Change the Security group
 ## CICD
 
 https://github.com/features/actions
+
+###For the build 
+- look at `.github\workflows\build.yml`
+  - `on` : what action will trigger the github action
+  - `env` : environment variable
+  - `jobs`
+    - `build` 
+      - `run-on` : what kind of os
+      - `service` : set up docker image and container for the application
+      - `steps` : contains the steps of workflow
+  
+- maven command review
+  - `--no-transfer-progress` : suppress the maven download msg
+  - `validate` - validate the project is correct and all necessary information is available
+  - `compile` - compile the source code of the project
+  - `test` - test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
+  - `package` - take the compiled code and package it in its distributable format, such as a JAR.
+  - `verify` - run any checks on results of integration tests to ensure quality criteria are met
+  - `install` - install the package into the local repository, for use as a dependency in other projects locally
+  - `deploy` - done in the build environment, copies the final package to the remote repository for sharing with other developers and projects.
+from https://stackoverflow.com/questions/16602017/how-are-mvn-clean-package-and-mvn-clean-install-different
+
